@@ -11,8 +11,8 @@ return (
 
     <Routes>
       <Route path="/" element={<ItemListContainer />} />
-      <Route path="/category/:id" element={<ItemListContainer />}></Route>
-      <Route path="/item/:id" element={<ItemDetailContainer />}></Route>
+      <Route path="/category/:id" element={<ItemListContainer />} />
+      <Route path="/item/:detailId" element={<ItemDetailContainer />} />
     </Routes>
   </div>
 )

@@ -12,16 +12,16 @@ const NavBar = () => {
             
             <ul className="navbar-nav me-auto">
                 <li className="nav-item">
-                    <NavLink to="/category/shirts" className="nav-link active" aria-current="page">Remeras</NavLink>
+                    <NavLink to="/category/shirts" className="nav-link active" aria-current="page">Shirts</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/category/coverall" className="nav-link active" aria-current="page">Buzos</NavLink>
+                    <NavLink to="/category/coverall" className="nav-link active" aria-current="page">Coverall</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/category/jacket" className="nav-link active" aria-current="page">Camperas</NavLink>
+                    <NavLink to="/category/jacket" className="nav-link active" aria-current="page">Jackets</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/category/set" className="nav-link active" aria-current="page">Conjuntos</NavLink>
+                    <NavLink to="/category/set" className="nav-link active" aria-current="page">Set</NavLink>
                 </li>
             </ul>
 
