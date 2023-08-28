@@ -1,6 +1,6 @@
 import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import {getProducts} from "../services.js";
+import {getProducts} from "../services";
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
@@ -20,8 +20,7 @@ const ItemListContainer = () => {
         })
     },[id]);
 
-    return 
-        <ItemList items={items} isLoading={isLoading}/>;
+    return <ItemList products={items} isLoading={isLoading}/>;
 
 };
 

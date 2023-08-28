@@ -16,7 +16,7 @@ const ItemList = ({products, isLoading}) => {
 
             <div className="row">
                 {products.map((product) =>(
-                    <Link to={`/item/${item.id}`}>
+                    <Link to={`/item/${product.id}`}>
                     <div className="col-6 col-md-4 col-lg-3" key={product.id}>
                         <div className="card box-shadow rounded mb-4">
                             <img src="" alt="" className="card-img-top rounded"/>

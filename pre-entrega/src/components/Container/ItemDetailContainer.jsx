@@ -21,4 +21,4 @@ const ItemDetailContainer = () => {
     return <ItemDetail item={item} isLoading={isLoading}/>;
 };
 
-export default ItemDeatilContainer;
+export default ItemDetailContainer;
