@@ -9,16 +9,16 @@ const ItemListContainer = () => {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    const {id} = useParams([]);
+    const {categoryId} = useParams([]);
 
     useEffect(() => {
         setIsLoading(true);
 
-        getProducts(id).then((response) => {
+        getProducts(categoryId).then((response) => {
             setItems(response);
             setIsLoading(false);
         })
-    },[id]);
+    },[categoryId]);
 
     return <ItemList products={items} isLoading={isLoading}/>;
 

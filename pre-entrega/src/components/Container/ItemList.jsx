@@ -21,9 +21,9 @@ const ItemList = ({products, isLoading}) => {
                         <div className="card box-shadow rounded mb-4">
                             <img src="" alt="" className="card-img-top rounded"/>
                             <div className="card-body">
-                                <h5 className="card-title">{product.name}</h5>
+                                <h5 className="card-title">{product.title}</h5>
                                 <h5 className="card-title">{product.price}</h5>
-                                <h5 className="card-title">{product.category}</h5>
+                                <h5 className="card-title">{product.categoryId}</h5>
                                 <h5 className="card-title">{product.stock}</h5>
                             </div>
                         </div>

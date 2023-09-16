@@ -6,17 +6,17 @@ import ItemDetail from "./ItemDetail";
 const ItemDetailContainer = () => {
     const [item, setItem] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const {detailId} = useParams();
+    const {id} = useParams();
 
     useEffect(() => {
-        getProduct(detailId).then((response) => {
+        getProduct(id).then((response) => {
             setItem(response);
     }).catch((error) => {
         setItem(null);
     }).finally(() => {
         setIsLoading(false);
     });
-    },[detailId]);
+    },[id]);
 
     return <ItemDetail item={item} isLoading={isLoading}/>;
 };

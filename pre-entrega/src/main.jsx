@@ -9,12 +9,12 @@ import './index.css'
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDmF7L69Sk5svW8TEuWnu3hQRwSxqy0cR8",
-  authDomain: "entrega-final-coderreact.firebaseapp.com",
-  projectId: "entrega-final-coderreact",
-  storageBucket: "entrega-final-coderreact.appspot.com",
-  messagingSenderId: "579331846836",
-  appId: "1:579331846836:web:b56127b4b1464e291cdde1"
+  apiKey: import.meta.env.VITE_FIRESTORE_API_KEY,
+  authDomain: import.meta.env.VITE_FIRESTORE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIRESTORE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIRESTORE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIRESTORE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIRESTORE_APP_ID,
 };
 
 initializeApp(firebaseConfig);
