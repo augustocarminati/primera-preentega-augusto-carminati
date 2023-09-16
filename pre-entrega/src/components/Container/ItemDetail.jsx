@@ -12,10 +12,10 @@ const ItemDetail = ({item, isLoading}) => {
     }
 
     return <div>
-        <h2>{item.name}</h2>
+        <h2>{item.title}</h2>
         <p>${item.price}</p>
         <p>{item.stock}</p>
-        <p>{item.category}</p>
+        <p>{item.categoryId}</p>
         <p>{item.description}</p>
     </div>;
     };

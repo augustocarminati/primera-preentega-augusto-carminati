@@ -1,5 +1,5 @@
 
-import {doc, getDoc, collection, getDocs, query, where, getFirestore} from "firebase/firestore";
+import {doc, getDoc, collection, getDocs, query, where, getFirestore} from "firebase/firestore/lite";
 
 //const products = [
 //    {id: 1, name: "remera", description: "una remera", stock: 10, category: "shirts", price: 10000},
@@ -38,7 +38,7 @@ export const getProducts = (categoryId) => {
 
         const itemCollection = collection(db, "ITEMS");
 
-        let q
+        let q;
         if (categoryId) {
             q = query(itemCollection, where("categoryId", "=", categoryId));
         } else {
