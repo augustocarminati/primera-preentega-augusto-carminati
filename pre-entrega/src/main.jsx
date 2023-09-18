@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { initializeApp } from "firebase/app";
+import {initializeApp} from "firebase/app";
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -9,12 +9,12 @@ import './index.css'
 
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIRESTORE_API_KEY,
-  authDomain: import.meta.env.VITE_FIRESTORE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIRESTORE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIRESTORE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIRESTORE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIRESTORE_APP_ID,
+  apiKey: import.meta.env.VITE_REACT_APP_apiKey,
+  authDomain: import.meta.env.VITE_REACT_APP_authDomain,
+  projectId: import.meta.env.VITE_REACT_APP_projectId,
+  storageBucket: import.meta.env.VITE_REACT_APP_storageBucket,
+  messagingSenderId: import.meta.env.VITE_REACT_APP_messagingSenderId,
+  appId: import.meta.env.VITE_REACT_APP_appId,
 };
 
 

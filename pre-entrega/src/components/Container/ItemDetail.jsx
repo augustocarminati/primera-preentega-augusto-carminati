@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-const ItemDetail = ({item, isLoading}) => {
+const ItemDetail = ({item, isLoading, addItem}) => {
 
     if (isLoading) {
         return <h2>Loading</h2>;
@@ -11,18 +11,21 @@ const ItemDetail = ({item, isLoading}) => {
         return <h2>Product not found</h2>;
     }
 
-    return <div>
+    return (<div>
         <h2>{item.title}</h2>
         <p>${item.price}</p>
-        <p>{item.stock}</p>
+        <p>Stock: {item.stock}</p>
         <p>{item.categoryId}</p>
         <p>{item.description}</p>
-    </div>;
-    };
+        <button onClick={() => addItem(item,1)}>Agregar al carrito</button>
+    </div>
+    );
+};
 
-ItemDetail.PropTypes = {
+ItemDetail.propTypes = {
     item: PropTypes.object.isRequired,
     isLoading: PropTypes.bool,
+    addItem: PropTypes.func,
 }
 
     export default ItemDetail;

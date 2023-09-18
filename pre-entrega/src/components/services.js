@@ -1,22 +1,11 @@
 
-import {doc, getDoc, collection, getDocs, query, where, getFirestore} from "firebase/firestore/lite";
-
-//const products = [
-//    {id: 1, name: "remera", description: "una remera", stock: 10, category: "shirts", price: 10000},
-//    {id: 2, name: "remera", description: "una remera", stock: 9, category: "shirts", price: 10000}, 
-//    {id: 3, name: "buzo", description: "un buzo", stock: 10, category: "coverall", price: 20000},
-//    {id: 4, name: "buzo", description: "un buzo", stock: 9, category: "coverall", price: 20000},
-//   {id: 5, name: "campera", description: "una campera", stock: 10, category: "jacket", price: 35000},
-//    {id: 6, name: "campera", description: "una campera", stock: 9, category: "jacket", price: 35000},
-//    {id: 7, name: "conjunto", description: "un conjunto", stock: 10, category: "set", price: 45000},
-//    {id: 8, name: "conjunto", description: "un conjunto", stock: 9, category: "set", price: 45000},
-//];
+import {doc, getDoc, collection, getDocs, addDoc, query, where, getFirestore} from "firebase/firestore";
 
 export const getProduct = (id) => {
     return new Promise((resolve, reject) => {
         const db = getFirestore();
 
-        const itemDoc = doc(db, "items", id);
+        const itemDoc = doc(db, "ITEMS", id);
 
         getDoc(itemDoc)
             .then((doc) =>{
@@ -57,4 +46,12 @@ export const getProducts = (categoryId) => {
             })
     });
 
+};
+
+export const createOrder = (orden) => {
+    const db = getFirestore();
+
+    const ordersCollection = collection(db, "orders");
+
+    return addDoc(ordersCollection, orden);
 };
