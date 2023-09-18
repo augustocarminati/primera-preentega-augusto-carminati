@@ -28,8 +28,9 @@ export const getProducts = (categoryId) => {
         const itemCollection = collection(db, "ITEMS");
 
         let q;
+
         if (categoryId) {
-            q = query(itemCollection, where("categoryId", "=", categoryId));
+            q = query(itemCollection, where("categoryId", "==", categoryId));
         } else {
             q = query(itemCollection);
         }
