@@ -3,7 +3,6 @@ import CartProvider from "./context/CartProvider";
 import ItemListContainer from "./components/Container/ItemListContainer";
 import ItemDetailContainer from "./components/Container/ItemDetailContainer";
 import NavBar from "./components/NavBar/NavBar";
-
 import Checkout from "./components/Checkout";
 
 
@@ -21,5 +20,6 @@ return (
     </Routes>
   </CartProvider>
 );
-}
+};
+
 export default App;
