@@ -3,8 +3,37 @@ import CartContext from "../context/CartContext";
 import { serverTimestamp } from "firebase/firestore";
 import { getCartTotal, mapCartToOrderItems } from "../utils";
 import { createOrder } from "./services";
+import Field from './Field';
+
 
 const Checkout = () => {
+
+    const [formState, setFormState] = useState({
+        name: '',
+        surname: '',
+        age: '',
+    });
+
+    const { name, surname, age } = formState;
+
+    const onChange = (event) => {
+        setFormState({
+            ...formState,
+            [event.target.name]: event.target.value,
+        });
+    };
+
+    const isFormValid = (name && surname && age)
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+
+        if (isFormValid) {
+            console.log(`your name is ${name} ${surname} and you have ${age}`);
+        }
+    }
+
+
     const [orderId, setOrderId] = useState(null);
 
     const [isLoading, setIsLoading] = useState(null);
@@ -27,10 +56,10 @@ const Checkout = () => {
 
         setIsLoading(true);
         createOrder(order).then((docRef) => {
-                setOrderId(docRef.id);
-                setIsLoading(false);
-                clear();
-            });
+            setOrderId(docRef.id);
+            setIsLoading(false);
+            clear();
+        });
     };
 
     return (
@@ -45,6 +74,15 @@ const Checkout = () => {
                     <div>
                         <h3>Formulario de contacto</h3>
 
+                        <form onSubmit={onSubmit}>
+
+                            <Field label="Nombre" name="name" onChange={onChange} />
+                            <Field label="Apellido" name="surname" onChange={onChange} />
+                            <Field label="Edad" name="age" onChange={onChange} />
+
+                            <button disabled={!isFormValid} type="submit">Agregar formulario</button>
+
+                        </form>
                     </div>
 
                     <div>
@@ -71,5 +109,6 @@ const Checkout = () => {
         </div>
     );
 };
+
 
 export default Checkout
