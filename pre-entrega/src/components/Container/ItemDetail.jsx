@@ -13,9 +13,9 @@ const ItemDetail = ({item, isLoading, addItem}) => {
 
     return (<div>
         <h2>{item.title}</h2>
-        <p>${item.price}</p>
+        <p>Precio: ${item.price}</p>
         <p>Stock: {item.stock}</p>
-        <p>{item.categoryId}</p>
+        <p>Categoria: {item.categoryId}</p>
         <p>{item.description}</p>
         <button onClick={() => addItem(item,1)}>Agregar al carrito</button>
     </div>

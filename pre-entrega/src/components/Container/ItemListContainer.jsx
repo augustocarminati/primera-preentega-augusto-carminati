@@ -17,7 +17,7 @@ const ItemListContainer = () => {
         });
     },[categoryId]);
 
-    return <ItemList products={items} isLoading={isLoading}/>;
+    return <ItemList items={items} isLoading={isLoading}/>;
 
 };
 

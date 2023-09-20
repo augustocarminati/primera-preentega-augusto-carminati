@@ -1,7 +1,7 @@
 import propTypes from "prop-types";
 import {Link} from "react-router-dom";
 
-const ItemList = ({products, isLoading}) => {
+const ItemList = ({items, isLoading}) => {
     if(isLoading){
         return <h2>Loading..</h2>;
     }
@@ -12,19 +12,19 @@ const ItemList = ({products, isLoading}) => {
 
             {isLoading && <p>Loading</p>}
 
-            {!isLoading && products.length === 0 && <p>No products</p>}
+            {!isLoading && items.length === 0 && <p>No products</p>}
 
             <div className="row">
-                {products.map((product) =>(
+                {items.map((item) =>(
                     <Link to={`/item/${product.id}`}>
-                    <div className="col-6 col-md-4 col-lg-3" key={product.id}>
+                    <div className="col-6 col-md-4 col-lg-3" key={item.id}>
                         <div className="card box-shadow rounded mb-4">
                             <img src="" alt="" className="card-img-top rounded"/>
                             <div className="card-body">
-                                <h5 className="card-title">{product.title}</h5>
-                                <h5 className="card-title">{product.price}</h5>
-                                <h5 className="card-title">{product.categoryId}</h5>
-                                <h5 className="card-title">{product.stock}</h5>
+                                <h5 className="card-title">{item.title}</h5>
+                                <h5 className="card-title">{item.price}</h5>
+                                <h5 className="card-title">{item.categoryId}</h5>
+                                <h5 className="card-title">{item.stock}</h5>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ const ItemList = ({products, isLoading}) => {
 };
 
 ItemList.propTypes = {
-    products: propTypes.array.isRequired,
+    items: propTypes.array.isRequired,
     isLoading: propTypes.bool,
 };
 
