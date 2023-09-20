@@ -23,12 +23,12 @@ const NavBar = () => {
                     <li className="nav-item">
                         <NavLink to="/category/set" className="nav-link active" aria-current="page">Set</NavLink>
                     </li>
-                    <div>
+                </ul>
+                <div>
                         <NavLink to="/cart">
                             <CartWidget />
                         </NavLink>
                     </div>
-                </ul>
 
             </div>
         </nav>
