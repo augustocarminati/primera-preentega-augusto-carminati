@@ -1,12 +1,13 @@
 import propTypes from "prop-types";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import styles from "./ItemList.module.css";
 
-const ItemList = ({items, isLoading}) => {
-    if(isLoading){
+const ItemList = ({ items, isLoading }) => {
+    if (isLoading) {
         return <h2>Loading..</h2>;
     }
 
-    return(
+    return (
         <div>
             <h2>ItemList</h2>
 
@@ -14,23 +15,24 @@ const ItemList = ({items, isLoading}) => {
 
             {!isLoading && items.length === 0 && <p>No products</p>}
 
-            <div className="row">
-                {items.map((item) =>(
-                    <Link to={`/item/${product.id}`}>
-                    <div className="col-6 col-md-4 col-lg-3" key={item.id}>
-                        <div className="card box-shadow rounded mb-4">
-                            <img src="" alt="" className="card-img-top rounded"/>
-                            <div className="card-body">
-                                <h5 className="card-title">{item.title}</h5>
-                                <h5 className="card-title">{item.price}</h5>
-                                <h5 className="card-title">{item.categoryId}</h5>
-                                <h5 className="card-title">{item.stock}</h5>
+            <div className="row justify-content-center">
+                <div className="row row-cols-4">
+                    {items.map((item) => (
+                        <Link to={`/item/${item.id}`} key={item.id}>
+                            <div className="col">
+                                <div className="card w-75 h-75 text-center box-shadow rounded mb-4">
+                                    <img src={`/img/${item.imageId}`} alt="" className="card-img-top rounded" />
+                                    <div className="card-body">
+                                        <p className="card-text">{item.description}</p>
+                                        <p className="card-text">Precio: ${item.price}</p>
+                                        <p className="card-text">Stock: {item.stock}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    </Link>
-                ))}
-            </div>;
+                        </Link>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };

@@ -64,10 +64,6 @@ const Checkout = () => {
 
     return (
         <div>
-            <h1>Checkout</h1>
-
-            <h2>Resumen de la compra</h2>
-
             {orderId && <p>El id de la orden es:{orderId}</p>}
             {!orderId && (
                 <>
@@ -75,33 +71,33 @@ const Checkout = () => {
                         <h3>Formulario de contacto</h3>
 
                         <form onSubmit={onSubmit}>
-
                             <Field label="Nombre" name="name" onChange={onChange} />
                             <Field label="Apellido" name="surname" onChange={onChange} />
                             <Field label="Edad" name="age" onChange={onChange} />
-
                             <button disabled={!isFormValid} type="submit">Agregar formulario</button>
-
                         </form>
                     </div>
 
                     <div>
                         <h4>Productos</h4>
-                        <ul>
+                        <div className="row">
                             {cart.map((item) => (
-                                <li key={item.id}>
-                                    <p>{item.title}</p>
-                                    <p>Cantidad: {item.quantity}</p>
-                                    <p>Precio unitario: ${item.price}</p>
-                                    <p>Subtotal: ${item.price * item.quantity}</p>
-                                </li>
+                                <div className="card w-25 text-center box-shadow rounded" key={item.id}>
+                                    <img src={`/img/${item.imageId}`} alt="product" className="card-img-top" />
+                                    <div className="card-body">
+                                        <p>{item.description}</p>
+                                        <p>Cantidad: {item.quantity}</p>
+                                        <p>Precio unitario: ${item.price}</p>
+                                        <p>Subtotal: ${item.price * item.quantity}</p>
+                                    </div>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
 
                     <p>Total de la compra:{total}</p>
 
-                    <button onClick={handleCheckout}>Finalizar compra</button>
+                    <button className="btn btn-primary btn-sm" onClick={handleCheckout}>Finalizar compra</button>
 
                     {isLoading && <p>Procesando compra...</p>}
                 </>

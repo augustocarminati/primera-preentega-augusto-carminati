@@ -15,8 +15,8 @@ return (
 
     <Routes>
       <Route path="/" element={<ItemListContainer />} />
-      <Route path="/category/:id" element={<ItemListContainer />} />
-      <Route path="/item/:detailId" element={<ItemDetailContainer />} />
+      <Route path="/category/:categoryId" element={<ItemListContainer />} />
+      <Route path="/item/:id" element={<ItemDetailContainer />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
     </Routes>
